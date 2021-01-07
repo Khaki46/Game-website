@@ -1,0 +1,23 @@
+.box{margin:0 auto; text-align: center; width: 100%; }
+.section{ width: 320px; min-width: 120px; background-color: #fff; border-radius: 5px; display: inline-block; margin: 4% 0.65531% 0px; box-shadow: 2px 2px 5px black; position: relative; overflow: hidden; }
+.section a{ display: inline-block; position: relative; }
+
+
+.section img,.minhidden{ width: 320px; height: 100%; }
+.section:hover .minhidden{ opacity: .9;}
+.section p{ font-size: 1em; font-family: "黑体"; text-align:center; line-height: .3em;}
+.section p a{ text-decoration: none; color: gray;  }
+.section:hover p a{ color: black; }
+.minhidden{ opacity: 0; position: absolute; background-color: rgba(0,0,0,.5); color: white; left: 0; right: 0; top: 0; bottom: 0; transition: opacity 1s; border-radius: 6px; }
+.minhidden h1,.minhidden h2{ margin: 0; padding: 0; }
+.minhidden h2{ font-size: 1em; font-weight: normal; }
+.fonthidden{ width: 100%; height: 30.59414%; position: absolute; top: 0; bottom: 0; margin: auto; }
+
+
+
+
+
+
+
+
+
