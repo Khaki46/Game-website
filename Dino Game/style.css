@@ -30,15 +30,32 @@
     0%{
         top: 150px;
     }
-    30%{ 
-        top: 80px;
+    10%{
+        top: 125px;
     }
-    
+    20%{
+        top: 100px;
+    }
+    30%{ 
+        top: 75px;
+    }
+    40%{
+        top: 60px;
+    }
     50%{
         top: 50px;
     }
+    60%{
+        top: 60px;
+    }
     70%{
-        top: 80px;
+        top: 75px;
+    }
+    80%{
+        top: 100px;
+    }
+    90%{
+        top: 125px;
     }
     100%{
         top: 150px;
@@ -93,7 +110,7 @@
     height: 40px;
     position: relative;
     left: 800px;
-    top: 5px;
+    top: 10px;
 
 }
 .birdShow{
