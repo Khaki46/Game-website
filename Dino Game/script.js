@@ -55,7 +55,7 @@ document.getElementById("btn").onclick=function(){
         let cactusLeft = parseInt(window.getComputedStyle(cactus).getPropertyValue("left"));
         // 获得鸟的宽度距离
         let birdLeft = parseInt(window.getComputedStyle(bird).getPropertyValue("left"));
-        if(cactusLeft<42 && cactusLeft>0 && dinoTop>=100){
+        if(cactusLeft<40 && cactusLeft>0 && dinoTop>=100){
             alert('you die!');
             window.location.reload(); 
         }
@@ -64,7 +64,7 @@ document.getElementById("btn").onclick=function(){
         } else {
             dinoCanLive = false;
         }
-        if(birdLeft<42 && birdLeft>0 && dinoCanLive==false){
+        if(birdLeft<40 && birdLeft>0 && dinoCanLive==false){
             alert('you die!');
             window.location.reload(); 
         }
@@ -77,14 +77,14 @@ document.getElementById("btn").onclick=function(){
     
     function dinoGoFun1(){
         if(dinoTF){
-            dinoImg.setAttribute('src','img/dinogo1.png')
+            dinoImg.setAttribute('src','img/dinoGo1.png')
         }else{
             dinoImg.setAttribute('src','img/dinoDown1.png')
         }
     }
     function dinoGoFun2(){
         if(dinoTF){
-            dinoImg.setAttribute('src','img/dinogo2.png')
+            dinoImg.setAttribute('src','img/dinoGo2.png')
         }else{
             dinoImg.setAttribute('src','img/dinoDown2.png')
         }
