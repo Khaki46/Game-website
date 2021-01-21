@@ -5,8 +5,8 @@ document.getElementById("btn").onclick=function(){
     const dinoImg = dino.querySelector('img');
     const cactus = document.getElementById('cactus');
     const cactusImg = cactus.querySelector('img');
-    const bird = document.getElementById('bird');
-    const birdImg = bird.querySelector('img');
+    // const bird = document.getElementById('bird');
+    // const birdImg = bird.querySelector('img');
     
     let Score = document.getElementsByTagName('i')[0];
     let scoreNum=0;
@@ -93,12 +93,12 @@ document.getElementById("btn").onclick=function(){
         let dinoGo1=setInterval(dinoGoFun1, 100);
         let dinoGo2=setInterval(dinoGoFun2, 200);
     // 鸟飞翔动作
-    setInterval(() => {
-        birdImg.setAttribute('src','img/bird1.png');
-    }, 100);
-    setInterval(() => {
-        birdImg.setAttribute('src','img/bird2.png');
-    }, 250);
+    // setInterval(() => {
+    //     birdImg.setAttribute('src','img/bird1.png');
+    // }, 100);
+    // setInterval(() => {
+    //     birdImg.setAttribute('src','img/bird2.png');
+    // }, 250);
     // 更换仙人掌图片
     setInterval(() => {
         let num=Math.floor(Math.random()*10); 
