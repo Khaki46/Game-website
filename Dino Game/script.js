@@ -13,7 +13,6 @@ document.getElementById("btn").onclick=function(){
     let dinoDownTF = false;
     let dinoJumpTF = false;
     let dinoCanLive = true;
-    let dinoTF=true;
     function jump() {
         if (dino.classList != 'jump') {
             dino.classList.add("jump");
@@ -23,11 +22,11 @@ document.getElementById("btn").onclick=function(){
         }
     }
     function down() {
-        dinoTF = false;
-        dinoDownTF=true;
+        dinoDownTF = true;
+        dinoImg.setAttribute('src', 'img/dinoDown1.png')
+        
         document.addEventListener('keyup',control1);
         function control1() {
-            dinoTF = true;
             dinoDownTF=false;
             dinoImg.setAttribute('src', 'img/dino.png')
         }
@@ -55,7 +54,8 @@ document.getElementById("btn").onclick=function(){
         let cactusLeft = parseInt(window.getComputedStyle(cactus).getPropertyValue("left"));
         // 获得鸟的宽度距离
         let birdLeft = parseInt(window.getComputedStyle(bird).getPropertyValue("left"));
-        if(cactusLeft<40 && cactusLeft>0 && dinoTop>=100){
+        if (cactusLeft < 40 && cactusLeft > 0 && dinoTop >= 100) {
+            dinoImg.setAttribute('src', 'img/dinoDie.png');
             alert('you die!');
             window.location.reload(); 
         }
@@ -64,7 +64,8 @@ document.getElementById("btn").onclick=function(){
         } else {
             dinoCanLive = false;
         }
-        if(birdLeft<40 && birdLeft>0 && dinoCanLive==false){
+        if (birdLeft < 40 && birdLeft > 0 && dinoCanLive == false) {
+            dinoImg.setAttribute('src', 'img/dinoDie.png');
             alert('you die!');
             window.location.reload(); 
         }
@@ -74,31 +75,6 @@ document.getElementById("btn").onclick=function(){
     }, 10);
     document.addEventListener('keydown',control);
     
-    
-    function dinoGoFun1(){
-        if(dinoTF){
-            dinoImg.setAttribute('src','img/dinoGo1.png')
-        }else{
-            dinoImg.setAttribute('src','img/dinoDown1.png')
-        }
-    }
-    function dinoGoFun2(){
-        if(dinoTF){
-            dinoImg.setAttribute('src','img/dinoGo2.png')
-        }else{
-            dinoImg.setAttribute('src','img/dinoDown2.png')
-        }
-    }
-    
-        let dinoGo1=setInterval(dinoGoFun1, 100);
-        let dinoGo2=setInterval(dinoGoFun2, 200);
-    // 鸟飞翔动作
-    setInterval(() => {
-        birdImg.setAttribute('src','img/bird1.png');
-    }, 100);
-    setInterval(() => {
-        birdImg.setAttribute('src','img/bird2.png');
-    }, 250);
     // 更换仙人掌图片
     setInterval(() => {
         let num=Math.floor(Math.random()*10); 
