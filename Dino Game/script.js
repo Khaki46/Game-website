@@ -5,8 +5,8 @@ document.getElementById("btn").onclick=function(){
     const dinoImg = dino.querySelector('img');
     const cactus = document.getElementById('cactus');
     const cactusImg = cactus.querySelector('img');
-    const bird = document.getElementById('bird');
-    const birdImg = bird.querySelector('img');
+    // const bird = document.getElementById('bird');
+    // const birdImg = bird.querySelector('img');
     
     let Score = document.getElementsByTagName('i')[0];
     let scoreNum=0;
