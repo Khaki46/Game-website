@@ -1,4 +1,4 @@
-.Memorybox {
+#Memorybox {
     display: flex;
     flex-wrap: wrap;
     width: 600px;
@@ -7,9 +7,17 @@
     margin-right: auto;
     margin-top: 10px;
   }
+  .Memorybox img:active{
+      transform:scale(0.95);
+      -ms-transform:scale(0.95);
+      -webkit-transform:scale(0.95);
+      -o-transform:scale(0.95);
+      -moz-transform:scale(0.95);
+      box-shadow: 0px 0px 0.5px 6px rgb(219, 216, 216);
+  }
   img{
       width: 150px;
-      height: 200px;
+      height: 200px;   
       
 }
 h1{

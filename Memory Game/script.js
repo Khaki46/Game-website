@@ -52,70 +52,72 @@ const imgArr=[
         img:'img/6.png'
     }
 ]
-imgArr.sort(function(){return 0.5-Math.random();});
-const img = document.getElementsByTagName('img');
-let Score = document.getElementsByTagName('i')[0];
-let scoreNum=0;
+    imgArr.sort(function () { return 0.5 - Math.random(); });
+    const img = document.getElementsByTagName('img');
+    const Memorybox = document.getElementById('Memorybox');
+    let Score = document.getElementsByTagName('i')[0];
+    
+    let scoreNum=0;
 
-let cardId = [];
-let cardArr = [];
-let imgIdArr = [];
-let addNum = 0;
-function detect(){
-    // var cards = document.querySelectorAll('img');
-    const cardArrOne = imgIdArr[0];
-    const cardArrTwo = imgIdArr[1];
-    console.log(cardArrOne);
-    console.log(cardArrTwo);
-    if(cardArrOne==cardArrTwo){
-        cardArr[0].setAttribute('src','img/close.png');
-        cardArr[1].setAttribute('src','img/close.png');
-    }else if(cardId[0]===cardId[1]){
-        addNum+=1;
-        cardArr[0].setAttribute('src','img/open.png');
-        cardArr[1].setAttribute('src','img/open.png');
-        cardArr[0].setAttribute('style','pointer-events:none')
-        cardArr[1].setAttribute('style','pointer-events:none')
-        if(addNum==6){
-            document.querySelector('h1').style.display='block';
-            Btn.innerHTML="重新开始"
-            Btn.style.display='block';
-            clearInterval(scoreTime);
+    let cardId = [];
+    let cardArr = [];
+    let imgIdArr = [];
+    let addNum = 0;
+    Memorybox.className = 'Memorybox';    
+    function detect() {
+        // var cards = document.querySelectorAll('img');
+        const cardArrOne = imgIdArr[0];
+        const cardArrTwo = imgIdArr[1];
+        console.log(cardArrOne);
+        console.log(cardArrTwo);
+        if(cardArrOne==cardArrTwo){
+            cardArr[0].setAttribute('src','img/close.png');
+            cardArr[1].setAttribute('src','img/close.png');
+        }else if(cardId[0]===cardId[1]){
+            addNum+=1;
+            cardArr[0].setAttribute('src','img/open.png');
+            cardArr[1].setAttribute('src','img/open.png');
+            cardArr[0].setAttribute('style','pointer-events:none')
+            cardArr[1].setAttribute('style','pointer-events:none')
+            if(addNum==6){
+                document.querySelector('h1').style.display='block';
+                Btn.innerHTML="重新开始"
+                Btn.style.display='block';
+                clearInterval(scoreTime);
+            }
+            console.log(cardArr[0]);
+            console.log(cardArr[1]);
+            }else{
+            cardArr[0].setAttribute('src','img/close.png');
+            cardArr[1].setAttribute('src','img/close.png');
+            
         }
-        console.log(cardArr[0]);
-        console.log(cardArr[1]);
-        }else{
-        cardArr[0].setAttribute('src','img/close.png');
-        cardArr[1].setAttribute('src','img/close.png');
-        
+        // 重置
+        cardArr=[]
+        cardId=[]
+        imgIdArr=[]
     }
-    // 重置
-    cardArr=[]
-    cardId=[]
-    imgIdArr=[]
-}
-for (let i = 0; i < img.length; i++) {
-    console.log(imgArr[i]);
-    img[i].addEventListener('click',flipCard);
-    function flipCard(){
+    for (let i = 0; i < img.length; i++) {
+        console.log(imgArr[i]);
+        img[i].addEventListener('click',flipCard);
+        function flipCard(){
 
-        img[i].setAttribute('src',imgArr[i].img)
-        img[i].index=i;
-        imgIdArr.push(this.index);
-        cardArr.push(img[i]);
-        cardId.push(imgArr[i].name);
-        if(cardId.length===2){
-            setTimeout(detect, 300);
+            img[i].setAttribute('src',imgArr[i].img)
+            img[i].index=i;
+            imgIdArr.push(this.index);
+            cardArr.push(img[i]);
+            cardId.push(imgArr[i].name);
+            if(cardId.length===2){
+                setTimeout(detect, 300);
+            }
         }
     }
+    // 成绩
+    let scoreTime= setInterval(() => {
+        scoreNum++;
+        Score.innerHTML=scoreNum;
+    }, 1000);
+    document.getElementById("btn").onclick = function () {
+        window.location.reload(); 
+    }
 }
-// 成绩
-let scoreTime= setInterval(() => {
-    scoreNum++;
-    Score.innerHTML=scoreNum;
-}, 1000);
-document.getElementById("btn").onclick=function(){
-    window.location.reload(); 
-}
-}
-
