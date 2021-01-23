@@ -1,180 +1,174 @@
-.Dinobox{
-    width: 800px;
-    height: 200px;
-    margin: auto;
-    overflow: hidden;
-
+.Dinobox {
+  width: 800px;
+  height: 200px;
+  margin: auto;
+  overflow: hidden;
 }
 #btn {
-    margin-left: 45%;
+  margin-left: 45%;
 }
 
-#boxScore{
-    width: 100%;
+#boxScore {
+  width: 100%;
 }
-#score{
-    margin: auto;
-    width: 100px;
+#score {
+  margin: auto;
+  width: 100px;
 }
-#dino{
-    width: 45px;
-    height: 50px;
-    position: relative;
-    top: 150px;
+#dino {
+  width: 45px;
+  height: 50px;
+  position: relative;
+  top: 150px;
 }
-.jump{
-    animation: jump 0.6s linear;
+.jump {
+  animation: jump 0.6s linear;
 }
 /* 恐龙向上跳动画 */
-@keyframes jump{
-    0%{
-        top: 150px;
-    }
-    10%{
-        top: 125px;
-    }
-    20%{
-        top: 100px;
-    }
-    30%{ 
-        top: 75px;
-    }
-    40%{
-        top: 60px;
-    }
-    50%{
-        top: 50px;
-    }
-    60%{
-        top: 60px;
-    }
-    70%{
-        top: 75px;
-    }
-    80%{
-        top: 100px;
-    }
-    90%{
-        top: 125px;
-    }
-    100%{
-        top: 150px;
-    }
-}
-.down{
-    width: 45px;
-    height: 25px;
-    position: relative;
+@keyframes jump {
+  0% {
     top: 150px;
+  }
+  10% {
+    top: 125px;
+  }
+  20% {
+    top: 100px;
+  }
+  30% {
+    top: 75px;
+  }
+  40% {
+    top: 60px;
+  }
+  50% {
+    top: 50px;
+  }
+  60% {
+    top: 60px;
+  }
+  70% {
+    top: 75px;
+  }
+  80% {
+    top: 100px;
+  }
+  90% {
+    top: 125px;
+  }
+  100% {
+    top: 150px;
+  }
 }
-#ground{
-    /* 地面图片宽度为1200px */
-    width: 2415px;
-    height: 15px;
-    position: relative;
-    top: 130px;
-    left: 0px;
-    animation:  cycle 10s linear infinite;
+.down {
+  width: 45px;
+  height: 25px;
+  position: relative;
+  top: 150px;
+}
+#ground {
+  /* 地面图片宽度为1200px */
+  width: 2415px;
+  height: 15px;
+  position: relative;
+  top: 130px;
+  left: 0px;
+  animation: cycle 10s linear infinite;
 }
 /* 图片无限循环动画 */
-@keyframes cycle{
-    0%{
-        left: 0px;
-    }
-    100%{
-        left: -1200px;
-    }
+@keyframes cycle {
+  0% {
+    left: 0px;
+  }
+  100% {
+    left: -1200px;
+  }
 }
-#cactus{
-    width: 25px;
-    height: 50px;
-    position: relative;
-    top: 80px;
-    left: 800px;
+#cactus {
+  width: 25px;
+  height: 50px;
+  position: relative;
+  top: 80px;
+  left: 800px;
 }
-.cactusShow{
-    animation: obstacle 2s linear infinite;
+.cactusShow {
+  animation: obstacle 2s linear infinite;
 }
 /* 仙人掌出现动画 */
-@keyframes obstacle{
-    0%{
-        left: 830px
-    }
-    100%{
-        left: -20px
+@keyframes obstacle {
+  0% {
+    left: 830px;
+  }
+  100% {
+    left: -20px;
+  }
+}
+#bird {
+  width: 50px;
+  height: 40px;
+  position: relative;
+  left: 800px;
+  top: 10px;
+}
+.birdShow {
+  animation: birdFly 2s linear infinite;
+}
+@keyframes birdFly {
+  0% {
+    left: 830px;
+  }
+  100% {
+    left: -50px;
+  }
+}
+#cloud1 {
+  width: 50px;
+  height: 18px;
+  position: relative;
+  top: -80px;
+  left: 780px;
 
-    }
+  animation: cloud1 20s linear infinite;
 }
-#bird{
-    width: 50px;
-    height: 40px;
-    position: relative;
-    left: 800px;
-    top: 10px;
-
-}
-.birdShow{
-    animation: birdFly 2s linear infinite;
-}
-@keyframes birdFly{
-    0%{
-        left: 830px;
-    }
-    100%{
-        left: -50px;
-    }
-}
-#cloud1{
-    width: 50px;
-    height: 18px;
-    position: relative;
-    top: -80px;
+@keyframes cloud1 {
+  0% {
     left: 780px;
-
-    animation: cloud1 20s linear infinite;
+  }
+  100% {
+    left: -200px;
+  }
 }
-@keyframes cloud1{
-    0%{
-        left: 780px
-    }
-    100%{
-        left: -200px
+#cloud2 {
+  width: 50px;
+  height: 18px;
+  position: relative;
+  top: -55px;
+  left: 900px;
 
-    }
+  animation: cloud2 20s linear infinite;
 }
-#cloud2{
-    width: 50px;
-    height: 18px;
-    position: relative;
-    top: -55px;
+@keyframes cloud2 {
+  0% {
     left: 900px;
-
-    animation: cloud2 20s linear infinite;
+  }
+  100% {
+    left: -200px;
+  }
 }
-@keyframes cloud2{
-    0%{
-        left: 900px
-    }
-    100%{
-        left: -200px
+#cloud3 {
+  width: 50px;
+  height: 18px;
+  position: relative;
+  top: -35px;
+  left: 1500px;
 
-    }
+  animation: cloud3 25s linear infinite;
 }
-#cloud3{
-    width: 50px;
-    height: 18px;
-    position: relative;
-    top: -35px;
+@keyframes cloud3 {
+  0% {
     left: 1500px;
-
-    animation: cloud3 25s linear infinite;
-}
-@keyframes cloud3{
-    0%{
-        left: 1500px
-    }
-    100%{
-        left: -200px
-
-    }
+  }
+  100% {
+    left: -200px;
+  }
 }
