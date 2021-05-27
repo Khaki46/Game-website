@@ -1,18 +1,19 @@
 const Btn = document.getElementById("btn");
 const images = [];
-function proload() {
+function preload() {
     for (let i = 0; i < arguments.length; i++){
         images[i] = new Image();
-        images[i].src = proload.arguments[i];
+        images[i].src = preload.arguments[i];
     }
 }
-proload(
+preload(
     "img/1.png",
     "img/2.png",
     "img/3.png",
     "img/4.png",
     "img/5.png",
     "img/6.png",
+    "img/open.png"
 )
 Btn.onclick = function go() {
 

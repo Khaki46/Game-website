@@ -1,4 +1,11 @@
+const img = new Image();
+function preload(url) {
+    img.src = url;
+}
+preload('img/offline-sprite-1x.png');
+
 document.getElementById("btn").onclick = function () {
+    
     document.getElementById("btn").style.display = "none";
 
     const dino = document.getElementById("dino");
@@ -18,7 +25,7 @@ document.getElementById("btn").onclick = function () {
             dino.classList.add("jump");
             setTimeout(() => {
                 dino.classList.remove("jump");
-            }, 600);
+            }, 500);
         }
     }
     function down() {
@@ -102,5 +109,15 @@ document.getElementById("btn").onclick = function () {
             bird.classList.add("birdShow");
             cactus.classList.remove("cactusShow");
         }
-    }, 2000);
+    }, 6000);
 };
+//   取消上下键滑动
+document.onkeydown = function (e) {
+    if(e.key == "ArrowUp" || e.key == "ArrowDown"){
+    if(e.preventDefault){
+        e.preventDefault();
+    } else {
+        e.returnValue = false;
+    }
+}
+}

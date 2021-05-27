@@ -1,8 +1,24 @@
 .Dinobox {
-  width: 800px;
+  width: 65%;
   height: 200px;
   margin: auto;
+  /* background-color: aqua; */
   overflow: hidden;
+}
+.insideBox{
+  width: 300%;
+  height: 100%;
+  position: relative;
+  top: 0px;
+  left: 0px;
+  /* background-color: aquamarine; */
+}
+@media (max-width: 800px) {
+  .Dinobox{
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+  }
 }
 #btn {
   margin-left: 45%;
@@ -18,46 +34,30 @@
 #dino {
   width: 45px;
   height: 50px;
-  position: relative;
-  top: 150px;
+  position: absolute;
+  top: 132px;
+}
+.dinoImg{
+  background: url("img/offline-sprite-1x.png") no-repeat;
+  width: 100%;
+  height: 100%;
+}
+.iconDino{
+  background-position: -675px 0px;
 }
 .jump {
-  animation: jump 0.6s linear;
+  animation: jump 0.5s ease-out;
 }
 /* 恐龙向上跳动画 */
 @keyframes jump {
   0% {
-    top: 150px;
-  }
-  10% {
-    top: 125px;
-  }
-  20% {
-    top: 100px;
-  }
-  30% {
-    top: 75px;
-  }
-  40% {
-    top: 60px;
+    top: 132px;
   }
   50% {
     top: 50px;
   }
-  60% {
-    top: 60px;
-  }
-  70% {
-    top: 75px;
-  }
-  80% {
-    top: 100px;
-  }
-  90% {
-    top: 125px;
-  }
   100% {
-    top: 150px;
+    top: 132px;
   }
 }
 .down {
@@ -68,36 +68,53 @@
 }
 #ground {
   /* 地面图片宽度为1200px */
-  width: 2415px;
-  height: 15px;
-  position: relative;
-  top: 130px;
+  position: absolute;
   left: 0px;
+  bottom: 0px;
+  width: 100%;
+  height: 30px;
   animation: cycle 10s linear infinite;
+}
+.groundImg{
+  background: url("img/offline-sprite-1x.png") repeat-x;
+  width: 100%;
+  height: 30px;
+}
+.iconGround{
+  background-position: 0px -55px;
 }
 /* 图片无限循环动画 */
 @keyframes cycle {
   0% {
-    left: 0px;
+    transform: translate3d(0,0,0);
   }
   100% {
-    left: -1200px;
+    transform: translate3d(-1200px, 0, 0); /* The image width */
   }
 }
+
 #cactus {
   width: 25px;
   height: 50px;
-  position: relative;
-  top: 80px;
-  left: 800px;
+  position: absolute;
+  top: 130px;
+  left: 100%;
+}
+.cactusImg{
+  background: url("img/offline-sprite-1x.png") no-repeat;
+  width: 25px;
+  height: 50px;
+}
+.iconCactus{
+  background-position: -330px 2px;
 }
 .cactusShow {
-  animation: obstacle 2s linear infinite;
+  animation: obstacle 6s linear infinite;
 }
 /* 仙人掌出现动画 */
 @keyframes obstacle {
   0% {
-    left: 830px;
+    left: 100%;
   }
   100% {
     left: -20px;
@@ -106,67 +123,48 @@
 #bird {
   width: 50px;
   height: 40px;
-  position: relative;
-  left: 800px;
-  top: 10px;
+  position: absolute;
+  left: 100%;
+  top: 110px;
+}
+.birdImg{
+  background: url("img/offline-sprite-1x.png") no-repeat;
+  width: 50px;
+  height: 40px;
+}
+.iconBird{
+  background-position: -131px -5px;
 }
 .birdShow {
-  animation: birdFly 2s linear infinite;
+  animation: birdFly 6s linear infinite;
 }
 @keyframes birdFly {
   0% {
-    left: 830px;
+    left: 100%;
   }
   100% {
     left: -50px;
   }
 }
-#cloud1 {
+#cloud{
+  position: absolute;
+  top: 90px;
+  animation: cloud1 10s linear infinite;
+
   width: 50px;
   height: 18px;
-  position: relative;
-  top: -80px;
-  left: 780px;
-
-  animation: cloud1 20s linear infinite;
+}
+.cloudImg{
+  background: url("img/offline-sprite-1x.png") no-repeat;
+  width: 50px;
+  height: 18px;
+}
+.iconCloud{
+  background-position: -85px 0px;
 }
 @keyframes cloud1 {
   0% {
     left: 780px;
-  }
-  100% {
-    left: -200px;
-  }
-}
-#cloud2 {
-  width: 50px;
-  height: 18px;
-  position: relative;
-  top: -55px;
-  left: 900px;
-
-  animation: cloud2 20s linear infinite;
-}
-@keyframes cloud2 {
-  0% {
-    left: 900px;
-  }
-  100% {
-    left: -200px;
-  }
-}
-#cloud3 {
-  width: 50px;
-  height: 18px;
-  position: relative;
-  top: -35px;
-  left: 1500px;
-
-  animation: cloud3 25s linear infinite;
-}
-@keyframes cloud3 {
-  0% {
-    left: 1500px;
   }
   100% {
     left: -200px;
