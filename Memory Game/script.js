@@ -1,4 +1,19 @@
 const Btn = document.getElementById("btn");
+const images = [];
+function proload() {
+    for (let i = 0; i < arguments.length; i++){
+        images[i] = new Image();
+        images[i].src = proload.arguments[i];
+    }
+}
+proload(
+    "img/1.png",
+    "img/2.png",
+    "img/3.png",
+    "img/4.png",
+    "img/5.png",
+    "img/6.png",
+)
 Btn.onclick = function go() {
 
     Btn.style.display = 'none';
