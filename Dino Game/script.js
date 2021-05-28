@@ -9,7 +9,7 @@ document.getElementById("btn").onclick = function () {
     document.getElementById("btn").style.display = "none";
 
     const dino = document.getElementById("dino");
-    const dinoImg = dino.querySelector("img");
+    const dinoImg = dino.querySelector('div');
     const cactus = document.getElementById("cactus");
     const cactusImg = cactus.querySelector("img");
     // const bird = document.getElementById('bird');
@@ -19,6 +19,7 @@ document.getElementById("btn").onclick = function () {
     let scoreNum = 0;
     let dinoDownTF = false;
     let dinoJumpTF = false;
+    let dinoTF=true;
     let dinoCanLive = true;
     function jump() {
         if (dino.classList != "jump") {
@@ -29,11 +30,13 @@ document.getElementById("btn").onclick = function () {
         }
     }
     function down() {
+        dinoTF = false;
         dinoDownTF = true;
         dinoImg.setAttribute("src", "img/dinoDown1.png");
 
         document.addEventListener("keyup", control1);
         function control1() {
+            dinoTF = true;
             dinoDownTF = false;
             dinoImg.setAttribute("src", "img/dino.png");
         }
@@ -41,7 +44,6 @@ document.getElementById("btn").onclick = function () {
     function control(e) {
         if (e.keyCode === 32 || e.keyCode === 38) {
             // jump code
-
             jump();
         } else if (e.keyCode === 40) {
             down();
@@ -82,10 +84,27 @@ document.getElementById("btn").onclick = function () {
             window.location.reload();
         }
         if (dinoTop < 140) {
-            dinoImg.setAttribute("src", "img/dino.png");
+            // dinoImg.setAttribute("src", "img/dino.png");
         }
     }, 10);
     document.addEventListener("keydown", control);
+
+    function dinoGoFun1(){
+        if(dinoTF){
+            dinoImg.className = "dinoImg iconDinoGo1";
+        }else{
+            dinoImg.className = "dinoDownImg iconDinoDown1";
+        }
+    }
+    function dinoGoFun2(){
+        if(dinoTF){
+            dinoImg.className = "dinoImg iconDinoGo2";
+        }else{
+            dinoImg.className = "dinoDownImg iconDinoDown2";
+        }
+    }
+        setInterval(dinoGoFun1, 100);
+        setInterval(dinoGoFun2, 200);
 
     // 更换仙人掌图片
     setInterval(() => {

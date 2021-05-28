@@ -152,7 +152,7 @@
 
         <script type="text/javascript">
             const bird = document.getElementById('bird');
-            const birdImg = bird.querySelector('img');
+            const birdImg = bird.querySelector('div');
             $(document).ready(function () {
                 $("#sidebar").mCustomScrollbar({
                     theme: "minimal"
@@ -166,11 +166,12 @@
             });
             // 鸟飞翔动作
             setInterval(() => {
-                birdImg.setAttribute('src', 'img/bird1.png');
+                birdImg.className= "birdImg iconBird2"
             }, 100);
             setInterval(() => {
-                birdImg.setAttribute('src', 'img/bird2.png');
-            }, 250);
+                birdImg.className= "birdImg iconBird"
+            }, 200);
+            console.log(birdImg);
         </script>
 </body>
 
