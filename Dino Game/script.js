@@ -1,5 +1,5 @@
-const img = new Image();
 function preload(url) {
+    const img = new Image();
     img.src = url;
 }
 preload('img/offline-sprite-1x.png');
