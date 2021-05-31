@@ -81,7 +81,6 @@ Btn.onclick = function go() {
     let addNum = 0;
     Memorybox.className = 'Memorybox';
     function detect() {
-        // var cards = document.querySelectorAll('img');
         const cardArrOne = imgIdArr[0];
         const cardArrTwo = imgIdArr[1];
         console.log(cardArrOne);

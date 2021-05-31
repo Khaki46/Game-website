@@ -55,12 +55,12 @@ document.getElementById("btn").onclick = function () {
             jump();
         }
     // 成绩
-    let scoreTime = setInterval(() => {
+        setInterval(() => {
         scoreNum++;
         Score.innerHTML = scoreNum;
     }, 1000);
 
-    let dinoAlive = setInterval(() => {
+        setInterval(() => {
         // 获得恐龙高度距离
         let dinoTop = parseInt(
             window.getComputedStyle(dino).getPropertyValue("top")
@@ -73,7 +73,8 @@ document.getElementById("btn").onclick = function () {
         let birdLeft = parseInt(
             window.getComputedStyle(bird).getPropertyValue("left")
         );
-        if (cactusLeft < 40 && cactusLeft > 0 && dinoTop >= 100) {
+        console.log(dinoTop);
+        if (cactusLeft < 40 && cactusLeft > 0 && dinoTop >= 120) {
             dinoImg.style.cssText = "background-position: -854px 0px;";
             alert("you die!");
             window.location.reload();
@@ -83,7 +84,7 @@ document.getElementById("btn").onclick = function () {
         } else {
             dinoCanLive = false;
         }
-        if (birdLeft < 40 && birdLeft > 0 && dinoCanLive == false) {
+        if (birdLeft < 40 && birdLeft > 0 && dinoCanLive == false && dinoTop >= 120) {
             dinoImg.style.cssText = "background-position: -854px 0px;";
             alert("you die!");
             window.location.reload();
@@ -111,7 +112,6 @@ document.getElementById("btn").onclick = function () {
     // 更换仙人掌图片
     setInterval(() => {
         let num = Math.floor(Math.random() * 10);
-        // console.log(num);
         if (num <= 3) {
             cactusImg.classList.remove('cactusImg2');
             cactusImg.classList.remove('cactusImg3');
@@ -141,10 +141,10 @@ document.getElementById("btn").onclick = function () {
 //   取消上下键滑动
 document.onkeydown = function (e) {
     if(e.key == "ArrowUp" || e.key == "ArrowDown"){
-    if(e.preventDefault){
-        e.preventDefault();
-    } else {
-        e.returnValue = false;
-    }
-}
+        if(e.preventDefault){
+            e.preventDefault();
+        } else {
+            e.returnValue = false;
+        }
+    }    
 }
