@@ -11,9 +11,13 @@ document.getElementById("btn").onclick = function () {
     const dino = document.getElementById("dino");
     const dinoImg = dino.querySelector('div');
     const cactus = document.getElementById("cactus");
-    const cactusImg = cactus.querySelector("img");
-    // const bird = document.getElementById('bird');
-    // const birdImg = bird.querySelector('img');
+    const cactusImg = cactus.querySelector('div');
+    const groundImg = document.getElementById("ground").querySelector('div');
+    const cloud = document.getElementById("cloud");
+
+    const btnJump = document.getElementById("btnAll").querySelectorAll('button')[0];
+    groundImg.classList.add("groundShow");
+    cloud.classList.add("cloudShow");
 
     let Score = document.getElementsByTagName("i")[0];
     let scoreNum = 0;
@@ -32,13 +36,11 @@ document.getElementById("btn").onclick = function () {
     function down() {
         dinoTF = false;
         dinoDownTF = true;
-        dinoImg.setAttribute("src", "img/dinoDown1.png");
 
         document.addEventListener("keyup", control1);
         function control1() {
             dinoTF = true;
             dinoDownTF = false;
-            dinoImg.setAttribute("src", "img/dino.png");
         }
     }
     function control(e) {
@@ -49,6 +51,9 @@ document.getElementById("btn").onclick = function () {
             down();
         }
     }
+        btnJump.onclick = function () {
+            jump();
+        }
     // 成绩
     let scoreTime = setInterval(() => {
         scoreNum++;
@@ -69,7 +74,7 @@ document.getElementById("btn").onclick = function () {
             window.getComputedStyle(bird).getPropertyValue("left")
         );
         if (cactusLeft < 40 && cactusLeft > 0 && dinoTop >= 100) {
-            dinoImg.setAttribute("src", "img/dinoDie.png");
+            dinoImg.style.cssText = "background-position: -854px 0px;";
             alert("you die!");
             window.location.reload();
         }
@@ -79,12 +84,9 @@ document.getElementById("btn").onclick = function () {
             dinoCanLive = false;
         }
         if (birdLeft < 40 && birdLeft > 0 && dinoCanLive == false) {
-            dinoImg.setAttribute("src", "img/dinoDie.png");
+            dinoImg.style.cssText = "background-position: -854px 0px;";
             alert("you die!");
             window.location.reload();
-        }
-        if (dinoTop < 140) {
-            // dinoImg.setAttribute("src", "img/dino.png");
         }
     }, 10);
     document.addEventListener("keydown", control);
@@ -109,13 +111,19 @@ document.getElementById("btn").onclick = function () {
     // 更换仙人掌图片
     setInterval(() => {
         let num = Math.floor(Math.random() * 10);
-        console.log(num);
+        // console.log(num);
         if (num <= 3) {
-            cactusImg.setAttribute("src", "img/cactus2.png");
+            cactusImg.classList.remove('cactusImg2');
+            cactusImg.classList.remove('cactusImg3');
+            cactusImg.classList.add('cactusImg1');
         } else if (3 < num <= 6) {
-            cactusImg.setAttribute("src", "img/cactus3.png");
+            cactusImg.classList.remove('cactusImg1');
+            cactusImg.classList.remove('cactusImg3');
+            cactusImg.classList.add('cactusImg2');
         } else if (6 < num <= 10) {
-            cactusImg.setAttribute("src", "img/cactus4.png");
+            cactusImg.classList.remove('cactusImg1');
+            cactusImg.classList.remove('cactusImg2');
+            cactusImg.classList.add('cactusImg3');
         }
     }, 2000);
     // 鸟和仙人掌出现
@@ -128,7 +136,7 @@ document.getElementById("btn").onclick = function () {
             bird.classList.add("birdShow");
             cactus.classList.remove("cactusShow");
         }
-    }, 6000);
+    }, 4000);
 };
 //   取消上下键滑动
 document.onkeydown = function (e) {

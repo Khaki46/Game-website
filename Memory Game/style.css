@@ -25,6 +25,8 @@
   box-shadow: 0px 0px 0.5px 3px rgb(219, 216, 216);
 }
 img {
+  margin-top: auto;
+  margin-bottom: auto;
   width: 100%; 
 }
 h1 {

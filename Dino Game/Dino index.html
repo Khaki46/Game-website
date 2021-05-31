@@ -97,39 +97,34 @@
             <p>通过上下键和空格键进行跳跃与下蹲操作躲避障碍物。</p>
             <div id="Gamebox">
                 <button id="btn">开始游戏</button>
-                <div class="Dinobox">
-                    <div class="insideBox">
-                        <div id="dino">
-                            <div class="dinoImg iconDino"></div>
-                            <!-- <img src="img/dino.png" alt="dino" draggable="false"> -->
-                        </div>
-                        <div id="ground">
-                            <div class="groundImg iconGround"></div>
-                            <!-- <img src="img/ground.png" alt="ground" draggable="false">
-                            <img src="img/ground.png" alt="ground" draggable="false"> -->
-                        </div>
-                        <div id="cactus">
-                            <div class="cactusImg iconCactus"></div>
-                            <!-- <img src="img/cactus1.png" alt="cactus" draggable="false"> -->
-                        </div>
-                        <div id="bird">
-                            <div class="birdImg iconBird"></div>
-                            <!-- <img src="img/bird2.png" alt="bird" draggable="false"> -->
-                        </div>
-                        <div id="cloud">
-                            <div class="cloudImg iconCloud"></div>
-                            <!-- <img id="cloud1" src="img/cloud.png" alt="cloud" draggable="false">
-                            <img id="cloud2" src="img/cloud.png" alt="cloud" draggable="false">
-                            <img id="cloud3" src="img/cloud.png" alt="cloud" draggable="false"> -->
-                        </div>
-                    </div>
-                </div>
                 <div id="boxScore">
                     <div id="score">
                         <p>分数：<i></i></p>
                     </div>
                 </div>
 
+                <div class="Dinobox">
+                    <div class="insideBox">
+                        <div id="dino">
+                            <div class="dinoImg iconDino"></div>
+                        </div>
+                        <div id="ground">
+                            <div class="groundImg iconGround"></div>
+                        </div>
+                        <div id="cactus">
+                            <div class="cactusImg3"></div>
+                        </div>
+                        <div id="bird">
+                            <div class="birdImg iconBird"></div>
+                        </div>
+                        <div id="cloud">
+                            <div class="cloudImg iconCloud"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="btnAll" id="btnAll">
+                    <button class="btnJump">Jump</button>
+                </div>
             </div>
         </div>
         <!-- 游戏 -->
@@ -164,7 +159,7 @@
                     $('a[aria-expanded=true]').attr('aria-expanded', 'false');
                 });
             });
-            // 鸟飞翔动作
+            // bird fly
             setInterval(() => {
                 birdImg.className= "birdImg iconBird2"
             }, 100);

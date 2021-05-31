@@ -1,8 +1,7 @@
 .Dinobox {
   width: 65%;
-  height: 200px;
+  height: 220px;
   margin: auto;
-  /* background-color: aqua; */
   overflow: hidden;
 }
 .insideBox{
@@ -11,14 +10,6 @@
   position: relative;
   top: 0px;
   left: 0px;
-  /* background-color: aquamarine; */
-}
-@media (max-width: 800px) {
-  .Dinobox{
-    margin-left: auto;
-    margin-right: auto;
-    width: 100%;
-  }
 }
 #btn {
   margin-left: 45%;
@@ -35,7 +26,7 @@
   width: 62px;
   height: 50px;
   position: absolute;
-  top: 132px;
+  top: 152px;
 }
 .dinoImg{
   background: url("img/offline-sprite-1x.png") no-repeat;
@@ -69,13 +60,13 @@
 /* 恐龙向上跳动画 */
 @keyframes jump {
   0% {
-    top: 132px;
+    top: 152px;
   }
   50% {
     top: 50px;
   }
   100% {
-    top: 132px;
+    top: 152px;
   }
 }
 .down {
@@ -89,14 +80,16 @@
   position: absolute;
   left: 0px;
   bottom: 0px;
-  width: 100%;
+  width: 2400px;
   height: 30px;
-  animation: cycle 10s linear infinite;
 }
 .groundImg{
   background: url("img/offline-sprite-1x.png") repeat-x;
-  width: 100%;
+  width: 2400px;
   height: 30px;
+}
+.groundShow{
+  animation: cycle 10s linear infinite;
 }
 .iconGround{
   background-position: 0px -55px;
@@ -115,27 +108,38 @@
   width: 25px;
   height: 50px;
   position: absolute;
-  top: 130px;
+  top: 150px;
   left: 100%;
 }
-.cactusImg{
+.cactusImg1{
   background: url("img/offline-sprite-1x.png") no-repeat;
   width: 25px;
   height: 50px;
-}
-.iconCactus{
   background-position: -330px 2px;
 }
+.cactusImg2{
+  background: url("img/offline-sprite-1x.png") no-repeat;
+  width: 50px;
+  height: 50px;
+  background-position: -356px 2px;
+}
+.cactusImg3{
+  background: url("img/offline-sprite-1x.png") no-repeat;
+  width: 78px;
+  height: 50px;
+  background-position: -406px 2px;
+}
+
 .cactusShow {
-  animation: obstacle 6s linear infinite;
+  animation: obstacle 4s linear infinite;
 }
 /* 仙人掌出现动画 */
 @keyframes obstacle {
   0% {
-    left: 100%;
+    left: 80%;
   }
   100% {
-    left: -20px;
+    left: -10px;
   }
 }
 #bird {
@@ -143,7 +147,7 @@
   height: 40px;
   position: absolute;
   left: 100%;
-  top: 110px;
+  top: 140px;
 }
 .birdImg{
   background: url("img/offline-sprite-1x.png") no-repeat;
@@ -157,22 +161,22 @@
   background-position: -178px -5px;
 }
 .birdShow {
-  animation: birdFly 6s linear infinite;
+  animation: birdFly 4s linear infinite;
 }
 @keyframes birdFly {
   0% {
-    left: 100%;
+    left: 80%;
   }
   100% {
-    left: -50px;
+    left: -10px;
   }
 }
 #cloud{
   position: absolute;
   top: 90px;
-  animation: cloud1 10s linear infinite;
-
   width: 50px;
+  left: 100%;
+
   height: 18px;
 }
 .cloudImg{
@@ -180,14 +184,35 @@
   width: 50px;
   height: 18px;
 }
+.cloudShow{
+  animation: cloud1 10s linear infinite;
+}
 .iconCloud{
   background-position: -85px 0px;
 }
 @keyframes cloud1 {
   0% {
-    left: 780px;
+    left: 50%;
   }
   100% {
     left: -200px;
+  }
+}
+.btnAll{
+  display: none;
+}
+@media (max-width: 500px) {
+  .Dinobox{
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+  }
+  .btnAll{
+    display: flex;
+    flex-direction: row;
+  }
+  .btnJump{
+    margin-left: auto;
+    margin-right: auto;
   }
 }
