@@ -1,20 +1,18 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
-    <title>Game website</title>
-
-    <link rel="shortcut icon" href="image/playgame.png" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eatball Game</title>
+    <link rel="shortcut icon" href="../image/playgame.png" type="image/x-icon">
     <!-- Bootstrap CSS CDN -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
         integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
     <!-- Our Custom CSS -->
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/gamestyle.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/gamestyle.css">
+    <link rel="stylesheet" href="style.css">
     <!-- Scrollbar Custom CSS -->
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
@@ -26,33 +24,33 @@
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js"
         integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY"
         crossorigin="anonymous"></script>
-
 </head>
-
 <body>
-
     <div class="wrapper">
         <!-- Sidebar  -->
         <nav id="sidebar">
             <div class="sidebar-header">
-                <a href="index.html">
+                <a href="../index.html">
                     <h3>Game Website</h3>
                 </a>
             </div>
 
             <ul class="list-unstyled components">
                 <p>选择一个游戏</p>
+                <!-- <li class="active">
+                    <a href="#homeSubmenu">猜数字</a>
+                </li> -->
                 <li>
-                    <a href="Number Game/Number index.html">猜数字</a>
+                    <a href="../Number Game/Number index.html">猜数字</a>
                 </li>
                 <li>
-                    <a href="Memory Game/Memory index.html">记忆翻牌</a>
+                    <a href="../Memory Game/Memory index.html">记忆翻牌</a>
                 </li>
                 <li>
-                    <a href="Dino Game/Dino index.html">恐龙游戏</a>
+                    <a href="../Dino Game/Dino index.html">恐龙游戏</a>
                 </li>
                 <li>
-                    <a href="Eatball Game/Eatball index.html">吃球游戏</a>
+                    <a href="Eatball index.html">吃球游戏</a>
                 </li>
             </ul>
 
@@ -63,7 +61,6 @@
             </ul>
         </nav>
     </div>
-
         <!-- Page Content  -->
         <div id="content">
 
@@ -84,67 +81,21 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="nav navbar-nav ml-auto">
                             <li class="nav-item active">
-                                <a class="nav-link" href="about.html">About</a>
+                                <a class="nav-link" href="../about.html">About</a>
                             </li>
                         </ul>
                     </div>
                 </div>
             </nav>
-
-            <h2>下面为本站提供的游戏</h2>
-            <div class="box">
-                <div class="section">
-                    <a href="Number Game/Number index.html">
-                        <img src="image/number.png" alt="number">
-                        <div class="minhidden">
-                            <div class="fonthidden">
-                                <h1>猜数字</h1>
-                                <h2>猜数字是一款益智游戏，玩家需猜出系统给出的数字。</h2>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="section">
-                    <a href="Memory Game/Memory index.html">
-                        <img src="image/card.png" alt="memory">
-                        <div class="minhidden">
-                            <div class="fonthidden">
-                                <h1>记忆翻牌</h1>
-                                <h2>记忆翻牌是一款益智游戏，玩家需点击任意两张牌子相同过关。</h2>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="section">
-                    <a href="Dino Game/Dino index.html">
-                        <img src="image/dino.png" alt="dino">
-                        <div class="minhidden">
-                            <div class="fonthidden">
-                                <h1>恐龙游戏</h1>
-                                <h2>恐龙游戏是一款休闲游戏，玩家需操控恐龙起跳与下蹲躲过障碍物。</h2>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="section">
-                    <a href="Eatball Game/Eatball index.html">
-                        <img src="image/Eatball.png" alt="Eatball">
-                        <div class="minhidden">
-                            <div class="fonthidden">
-                                <h1>吃球游戏</h1>
-                                <h2>移动恶魔球，吃掉其他的球</h2>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-
-                <div class="line"></div>
-
-                <h3>Thank you for playing</h3>
-                <p>Hope you like it.</p>
+            <h2>吃球</h2>
+            <p>操控球，吃掉另外的彩色球为胜利</p>
+            <div id="Gamebox">
+                <canvas></canvas>
             </div>
         </div>
-        <!-- jQuery CDN - Slim version (=without AJAX) -->
+        <!-- 游戏 -->
+        <script src="script.js"></script>
+        <!-- jQuery CDN -->
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
             integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
             crossorigin="anonymous"></script>
@@ -173,6 +124,6 @@
                 });
             });
         </script>
-</body>
 
+</body>
 </html>
